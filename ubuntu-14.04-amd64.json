@@ -62,7 +62,7 @@
   ],
   "post-processors": [
     {
-      "output": "20140416-ubuntu-14.04-amd64.box",
+      "output": "ubuntu-14.04-amd64-1.0.0.box",
       "type": "vagrant"
     }
   ],
