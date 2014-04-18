@@ -57,6 +57,7 @@
         "scripts/alpine/networking.sh",
         "scripts/alpine/vagrant.sh",
         "scripts/alpine/sudoers.sh",
+        "scripts/common/motd.sh"
         "scripts/common/minimize.sh"
       ],
       "type": "shell"
