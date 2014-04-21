@@ -1,4 +1,10 @@
 {
+  "variables": {
+    "iso_url": "http://de.releases.ubuntu.com/trusty/ubuntu-14.04-server-amd64.iso",
+    "iso_checksum": "4d94f6111b8fe47da94396180ce499d8c0bb44f3",
+    "version": "1.0.2",
+    "name": "ubuntu-14.04-amd64"
+  },
   "builders": [
     {
       "type": "virtualbox-iso",
@@ -19,8 +25,8 @@
         " keyboard-configuration/layout=USA",
         " keyboard-configuration/variant=USA",
         " locale=en_US",
-        " netcfg/get_domain=vm",
-        " netcfg/get_hostname=vagrant",
+        " netcfg/get_domain=site",
+        " netcfg/get_hostname={{user `name`}}",
         " noapic",
         " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ubuntu-14.04/preseed.cfg",
         " -- <wait>",
@@ -31,10 +37,10 @@
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "Ubuntu_64",
       "http_directory": "http",
-      "iso_checksum": "4d94f6111b8fe47da94396180ce499d8c0bb44f3",
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "sha1",
-      "iso_url": "http://de.releases.ubuntu.com/trusty/ubuntu-14.04-server-amd64.iso",
-      "output_directory": "ubuntu-14.04-amd64",
+      "output_directory": "{{user `name`}}-virtualbox",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -47,12 +53,12 @@
         [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "ubuntu-14.04-amd64"
+      "vm_name": "{{user `name`}}"
     }
   ],
   "post-processors": [
     {
-      "output": "ubuntu-14.04-amd64-1.0.1.box",
+      "output": "{{user `name`}}-{{user `version`}}-{{ .Provider }}.box",
       "type": "vagrant"
     }
   ],
@@ -64,11 +70,13 @@
         "scripts/common/sshd.sh",
         "scripts/common/motd.sh",
         "scripts/ubuntu/puppet.sh",
+        "scripts/ubuntu/chef.sh",
         "scripts/ubuntu/networking.sh",
         "scripts/ubuntu/sudoers.sh",
         "scripts/common/vagrant.sh",
         "scripts/common/vmtools.sh",
         "scripts/ubuntu/cleanup.sh",
+        "scripts/ubuntu/services.sh",
         "scripts/common/minimize.sh"
       ],
       "type": "shell"
