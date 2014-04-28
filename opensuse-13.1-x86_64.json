@@ -37,7 +37,7 @@
     {
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "scripts": [
-        "scripts/opensuse/update.sh",
+        "scripts/opensuse/13.1/update.sh",
         "scripts/opensuse/services.sh",
         "scripts/opensuse/puppet.sh",
         "scripts/common/motd.sh",
