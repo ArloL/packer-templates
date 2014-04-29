@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -x
 
 rm -f /etc/zypp/repos.d/openSUSE-13.1-1.10.repo
 rpm --import http://download.opensuse.org/distribution/13.1/repo/oss/gpg-pubkey-3dbdc284-4be1884d.asc
