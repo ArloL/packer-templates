@@ -193,6 +193,7 @@
       <package>iputils</package>
       <package>ifplugd</package>
       <package>iproute2</package>
+      <package>python</package>
     </packages>
     <do_online_update config:type="boolean">false</do_online_update>
     <patterns config:type="list">
