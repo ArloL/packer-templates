@@ -1,7 +1,8 @@
 #!/bin/sh -exu
 
+apk add bash
 apk add curl
-adduser -D vagrant
+adduser -s /bin/bash -D vagrant
 echo "vagrant:vagrant" | chpasswd
 mkdir /home/vagrant/.ssh
 curl -o /home/vagrant/.ssh/authorized_keys \
