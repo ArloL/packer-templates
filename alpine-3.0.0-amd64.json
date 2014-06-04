@@ -1,0 +1,81 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+         "root<enter><wait>",
+         "ifconfig eth0 10.0.2.15 netmask 255.255.255.0<enter><wait>",
+         "wget http://{{ .HTTPIP }}:{{ .HTTPPort }}/alpine-3.0.0/answers<enter><wait>",
+         "setup-alpine -f answers<enter><wait10>",
+         "vagrant<enter><wait>",
+         "vagrant<enter><wait10>",
+         "y<enter>",
+         "<wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10>",
+         "/etc/init.d/sshd stop<enter><wait>",
+         "reboot<enter>"
+      ],
+      "boot_wait": "30s",
+      "disk_size": 8192,
+      "guest_additions_mode": "disable",
+      "guest_os_type": "Linux26_64",
+      "http_directory": "http",
+      "iso_checksum": "ce1f93bec30db79b50186b115d3ac0d6619e8849",
+      "iso_checksum_type": "sha1",
+      "iso_url": "{{user `mirror`}}/alpine/v3.0/releases/x86_64/alpine-3.0.0-x86_64.iso",
+      "output_directory": "alpine-3.0.0-amd64",
+      "shutdown_command": "/sbin/poweroff",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_username": "root",
+      "ssh_wait_timeout": "100s",
+      "type": "virtualbox-iso",
+      "headless" : true,
+      "hard_drive_interface": "sata",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "512"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "1"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--vrde",
+          "on"
+        ]
+      ],
+      "virtualbox_version_file": ".vbox_version",
+      "vm_name": "alpine-3.0.0-amd64"
+    }
+  ],
+  "provisioners": [
+    {
+      "execute_command": "/bin/sh '{{.Path}}'",
+      "scripts": [
+        "scripts/alpine/update.sh",
+        "scripts/alpine/sshd.sh",
+        "scripts/alpine/networking.sh",
+        "scripts/alpine/vagrant.sh",
+        "scripts/alpine/sudoers.sh",
+        "scripts/common/motd.sh",
+        "scripts/common/minimize.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "post-processors": [
+    {
+      "output": "alpine-3.0.0-amd64.box",
+      "type": "vagrant"
+    }
+  ],
+  "variables": {
+    "mirror": "http://mirror.cabtec.net"
+  }
+}
