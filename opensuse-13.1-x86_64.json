@@ -4,6 +4,7 @@
       "boot_command": [
         "<esc><enter><wait>",
         "linux netsetup=dhcp lang=en_US hostname={{.Name}}",
+        " install=http://linuxmirror.rz.evosec.de/opensuse/distribution/13.1/repo/oss/",
         " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/opensuse-13.1/autoinst.xml",
         " textmode=1<wait><enter><wait>"
       ],
