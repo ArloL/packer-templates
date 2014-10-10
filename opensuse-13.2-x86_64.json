@@ -1,33 +1,38 @@
 {
   "builders": [
     {
-      "type": "virtualbox-iso",
-      "iso_url": "http://download.opensuse.org/distribution/13.2-Beta1/iso/openSUSE-13.2-DVD-Build0011-x86_64.iso",
-      "iso_checksum": "bcf4637b357be79dd01b316a97e6ab40",
-      "iso_checksum_type": "md5",
-      "output_directory": "opensuse-13.2-x86_64",
-      "boot_wait": "10s",
-      "disk_size": 32768,
-      "headless": true,
-      "ssh_username": "vagrant",
-      "ssh_password": "vagrant",
-      "ssh_port": 22,
-      "ssh_wait_timeout": "20m",
-      "vm_name": "vagrant",
-      "guest_os_type": "OpenSUSE_64",
-      "http_directory": "http",
-      "hard_drive_interface": "sata",
-      "guest_additions_mode": "disable",
-      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/shutdown -P now",
-      "vboxmanage": [
-        ["modifyvm", "{{.Name}}", "--vrde", "on"]
-      ],
       "boot_command": [
         "<esc><enter><wait>",
         "linux netsetup=dhcp lang=en_US hostname={{.Name}}",
         " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/opensuse-13.2/autoinst.xml",
         " textmode=1<wait><enter><wait>"
-      ]
+      ],
+      "boot_wait": "10s",
+      "disk_size": 32768,
+      "guest_additions_mode": "disable",
+      "guest_os_type": "OpenSUSE_64",
+      "hard_drive_interface": "sata",
+      "headless": true,
+      "http_directory": "http",
+      "iso_checksum": "bcf4637b357be79dd01b316a97e6ab40",
+      "iso_checksum_type": "md5",
+      "iso_url": "http://download.opensuse.org/distribution/13.2-Beta1/iso/openSUSE-13.2-DVD-Build0011-x86_64.iso",
+      "output_directory": "opensuse-13.2-x86_64",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/shutdown -P now",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "20m",
+      "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--vrde",
+          "on"
+        ]
+      ],
+      "vm_name": "vagrant"
     }
   ],
   "post-processors": [
@@ -51,3 +56,4 @@
     }
   ]
 }
+
