@@ -97,7 +97,7 @@
     <interfaces config:type="list">
       <interface>
         <bootproto>dhcp</bootproto>
-        <device>eth0</device>        
+        <device>eth0</device>
         <startmode>onboot</startmode>
       </interface>
     </interfaces>
