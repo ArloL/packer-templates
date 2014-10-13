@@ -44,6 +44,9 @@
   ],
   "provisioners": [
     {
+      "environment_vars": [
+        "URL=http://{{.HTTPIP}}:{{.HTTPPort}}/vagrant.pub"
+      ],
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "scripts": [
         "scripts/opensuse/13.1/update.sh",
@@ -54,9 +57,7 @@
         "scripts/common/vagrant.sh",
         "scripts/common/minimize.sh"
       ],
-      "type": "shell",
-      "environment_vars": ["URL=http://{{.HTTPIP}}:{{.HTTPPort}}/vagrant.pub"]
+      "type": "shell"
     }
   ]
 }
-
