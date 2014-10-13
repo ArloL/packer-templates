@@ -167,7 +167,6 @@
       <package>iputils</package>
       <package>kernel-default</package>
       <package>less</package>
-      <package>syslog-ng</package>
       <package>vim</package>
       <package>sudo</package>
       <package>screen</package>
