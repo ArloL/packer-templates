@@ -44,9 +44,11 @@
   ],
   "provisioners": [
     {
-      "environment_vars": [
-        "URL=http://{{.HTTPIP}}:{{.HTTPPort}}/vagrant.pub"
-      ],
+      "destination": "/tmp/vagrant.pub",
+      "source": "vagrant.pub",
+      "type": "file"
+    },
+    {
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
       "scripts": [
         "scripts/opensuse/13.1/update.sh",
