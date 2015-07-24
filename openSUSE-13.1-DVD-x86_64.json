@@ -50,9 +50,9 @@
     {
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
       "scripts": [
-        "scripts/opensuse/13.1/update.sh",
-        "scripts/opensuse/13.1/services.sh",
-        "scripts/opensuse/13.1/packages.sh",
+        "scripts/openSUSE-13.1/update.sh",
+        "scripts/openSUSE-13.1/services.sh",
+        "scripts/openSUSE-13.1/packages.sh",
         "scripts/common/motd.sh",
         "scripts/common/sshd.sh",
         "scripts/common/vagrant.sh",
