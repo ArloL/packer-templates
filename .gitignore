@@ -7,6 +7,9 @@ packer_cache/
 # For built boxes
 *.box
 
+# Output directories
+openSUSE-13.1-DVD-x86_64/
+
 
 ### SublimeText ###
 # cache files for sublime text
