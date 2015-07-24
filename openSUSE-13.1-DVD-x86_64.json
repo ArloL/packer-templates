@@ -4,7 +4,7 @@
       "boot_command": [
         "<esc><enter><wait>",
         "linux netsetup=dhcp lang=en_US hostname={{.Name}}",
-        " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/opensuse-13.1/autoinst.xml",
+        " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/openSUSE-13.1-autoyast.xml",
         " textmode=1<wait><enter><wait>"
       ],
       "boot_wait": "10s",
