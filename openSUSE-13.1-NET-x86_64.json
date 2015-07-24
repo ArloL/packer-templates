@@ -5,7 +5,7 @@
         "<esc><enter><wait>",
         "linux netsetup=dhcp lang=en_US hostname={{.Name}}",
         " install=http://linuxmirror.rz.evosec.de/opensuse/distribution/13.1/repo/oss/",
-        " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/opensuse-13.1/autoinst.xml",
+        " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/openSUSE-13.1-autoyast.xml",
         " textmode=1<wait><enter><wait>"
       ],
       "boot_wait": "10s",
@@ -18,7 +18,7 @@
       "iso_checksum": "9d5fcabfd5f01edfb62f52f3440efb0b701cc2e4",
       "iso_checksum_type": "sha1",
       "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-NET-x86_64.iso",
-      "output_directory": "opensuse-13.1-x86_64",
+      "output_directory": "openSUSE-13.1-NET-x86_64",
       "shutdown_command": "echo 'vagrant' | sudo -S /sbin/shutdown -P now",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -33,12 +33,12 @@
           "on"
         ]
       ],
-      "vm_name": "vagrant"
+      "vm_name": "openSUSE-13.1-NET-x86_64"
     }
   ],
   "post-processors": [
     {
-      "output": "opensuse-13.1-x86_64.box",
+      "output": "openSUSE-13.1-NET-x86_64.box",
       "type": "vagrant"
     }
   ],
@@ -51,9 +51,9 @@
     {
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
       "scripts": [
-        "scripts/opensuse/13.1/update.sh",
-        "scripts/opensuse/13.1/services.sh",
-        "scripts/opensuse/13.1/packages.sh",
+        "scripts/openSUSE-13.1/update.sh",
+        "scripts/openSUSE-13.1/services.sh",
+        "scripts/openSUSE-13.1/packages.sh",
         "scripts/common/motd.sh",
         "scripts/common/sshd.sh",
         "scripts/common/vagrant.sh",
