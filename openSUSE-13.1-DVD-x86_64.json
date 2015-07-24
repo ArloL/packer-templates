@@ -32,7 +32,7 @@
           "on"
         ]
       ],
-      "vm_name": "vagrant"
+      "vm_name": "openSUSE-13.1-DVD-x86_64"
     }
   ],
   "post-processors": [
