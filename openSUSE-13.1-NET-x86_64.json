@@ -31,6 +31,11 @@
           "{{.Name}}",
           "--vrde",
           "on"
+        ], [
+          "modifyvm",
+          "{{.Name}}",
+          "--vrdeport",
+          "49152,65535"
         ]
       ],
       "vm_name": "openSUSE-13.1-NET-x86_64"
