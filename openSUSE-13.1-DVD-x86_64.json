@@ -3,7 +3,7 @@
     {
       "boot_command": [
         "<esc><enter><wait>",
-        "linux netsetup=dhcp lang=en_US hostname={{.Name}}",
+        "linux netsetup=dhcp lang=en_US hostname=vagrant",
         " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/openSUSE-13.1-autoyast.xml",
         " textmode=1<wait><enter><wait>"
       ],
