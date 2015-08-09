@@ -25,7 +25,6 @@
   ],
   "post-processors": [
     {
-      "output": "openSUSE-13.1-DVD-x86_64.box",
       "type": "vagrant"
     }
   ],
