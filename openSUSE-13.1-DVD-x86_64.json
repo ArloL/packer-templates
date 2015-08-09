@@ -36,8 +36,8 @@
       "source": "vagrant.pub"
     },
     {
-      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
       "type": "shell",
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} echo 'vagrant' | sudo -E -S {{ .Path }};'",
       "scripts": [
         "scripts/openSUSE-13.1/update.sh",
         "scripts/openSUSE-13.1/services.sh",
