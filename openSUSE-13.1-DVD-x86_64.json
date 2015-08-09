@@ -1,6 +1,7 @@
 {
   "builders": [
     {
+      "type": "virtualbox-iso",
       "boot_command": [
         "<esc><enter><wait>",
         "linux netsetup=dhcp lang=en_US hostname=vagrant",
@@ -23,7 +24,6 @@
       "ssh_port": 22,
       "ssh_username": "vagrant",
       "ssh_wait_timeout": "40m",
-      "type": "virtualbox-iso",
       "vboxmanage": [
         [
           "modifyvm",
