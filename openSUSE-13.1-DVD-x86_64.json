@@ -13,8 +13,6 @@
         " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/openSUSE-13.1-autoyast.xml",
         " textmode=1<wait><enter><wait>"
       ],
-      "boot_wait": "10s",
-      "disk_size": 32768,
       "guest_additions_mode": "disable",
       "guest_os_type": "OpenSUSE_64",
       "hard_drive_interface": "sata",
