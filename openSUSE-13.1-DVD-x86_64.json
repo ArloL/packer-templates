@@ -31,9 +31,9 @@
   ],
   "provisioners": [
     {
+      "type": "file",
       "destination": "/tmp/vagrant.pub",
-      "source": "vagrant.pub",
-      "type": "file"
+      "source": "vagrant.pub"
     },
     {
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
