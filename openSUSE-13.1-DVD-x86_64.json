@@ -18,7 +18,7 @@
       "headless": true,
       "http_directory": "http",
       "shutdown_command": "echo 'vagrant' | sudo -S /sbin/shutdown -P now",
-      "ssh_wait_timeout": "40m"
+      "ssh_timeout": "40m"
     }
   ],
   "post-processors": [
