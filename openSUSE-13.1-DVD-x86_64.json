@@ -2,6 +2,9 @@
   "builders": [
     {
       "type": "virtualbox-iso",
+      "iso_checksum": "0b8c40a36ff514797cb2ef69331f1c3c8a9ec6ca",
+      "iso_checksum_type": "sha1",
+      "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-DVD-x86_64.iso",
       "boot_command": [
         "<esc><enter><wait>",
         "linux netsetup=dhcp lang=en_US hostname=vagrant",
@@ -15,9 +18,6 @@
       "hard_drive_interface": "sata",
       "headless": true,
       "http_directory": "http",
-      "iso_checksum": "0b8c40a36ff514797cb2ef69331f1c3c8a9ec6ca",
-      "iso_checksum_type": "sha1",
-      "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-DVD-x86_64.iso",
       "output_directory": "openSUSE-13.1-DVD-x86_64",
       "shutdown_command": "echo 'vagrant' | sudo -S /sbin/shutdown -P now",
       "ssh_password": "vagrant",
