@@ -2,6 +2,7 @@
   "builders": [
     {
       "type": "virtualbox-iso",
+      "name": "openSUSE-13.1-NET-x86_64",
       "iso_checksum": "9d5fcabfd5f01edfb62f52f3440efb0b701cc2e4",
       "iso_checksum_type": "sha1",
       "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-NET-x86_64.iso",
