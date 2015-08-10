@@ -1,6 +1,12 @@
 {
   "builders": [
     {
+      "type": "virtualbox-iso",
+      "iso_checksum": "9d5fcabfd5f01edfb62f52f3440efb0b701cc2e4",
+      "iso_checksum_type": "sha1",
+      "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-NET-x86_64.iso",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
       "boot_command": [
         "<esc><enter><wait>",
         "linux netsetup=dhcp lang=en_US hostname=vagrant",
@@ -8,62 +14,37 @@
         " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/openSUSE-13.1-autoyast.xml",
         " textmode=1<wait><enter><wait>"
       ],
-      "boot_wait": "10s",
-      "disk_size": 32768,
-      "guest_additions_mode": "disable",
       "guest_os_type": "OpenSUSE_64",
       "hard_drive_interface": "sata",
       "headless": true,
       "http_directory": "http",
-      "iso_checksum": "9d5fcabfd5f01edfb62f52f3440efb0b701cc2e4",
-      "iso_checksum_type": "sha1",
-      "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-NET-x86_64.iso",
-      "output_directory": "openSUSE-13.1-NET-x86_64",
       "shutdown_command": "echo 'vagrant' | sudo -S /sbin/shutdown -P now",
-      "ssh_password": "vagrant",
-      "ssh_port": 22,
-      "ssh_username": "vagrant",
-      "ssh_wait_timeout": "40m",
-      "type": "virtualbox-iso",
-      "vboxmanage": [
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--vrde",
-          "on"
-        ], [
-          "modifyvm",
-          "{{.Name}}",
-          "--vrdeport",
-          "49152,65535"
-        ]
-      ],
-      "vm_name": "openSUSE-13.1-NET-x86_64"
+      "ssh_timeout": "40m"
     }
   ],
   "post-processors": [
     {
-      "output": "openSUSE-13.1-NET-x86_64.box",
       "type": "vagrant"
     }
   ],
   "provisioners": [
     {
+      "type": "file",
       "destination": "/tmp/vagrant.pub",
-      "source": "vagrant.pub",
-      "type": "file"
+      "source": "vagrant.pub"
     },
     {
-      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+      "type": "shell",
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} echo 'vagrant' | sudo -E -S {{ .Path }};'",
       "scripts": [
         "scripts/openSUSE-13.1/update.sh",
         "scripts/openSUSE-13.1/services.sh",
+        "scripts/openSUSE-13.1/guest_additions.sh",
         "scripts/common/motd.sh",
         "scripts/common/sshd.sh",
         "scripts/common/vagrant.sh",
         "scripts/common/minimize.sh"
-      ],
-      "type": "shell"
+      ]
     }
   ]
 }
