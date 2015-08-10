@@ -35,7 +35,7 @@
     },
     {
       "type": "shell",
-      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} echo 'vagrant' | sudo -E -S {{ .Path }};'",
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} echo 'vagrant' | sudo -E -S {{ .Path }}",
       "scripts": [
         "scripts/openSUSE-13.1/update.sh",
         "scripts/openSUSE-13.1/services.sh",
