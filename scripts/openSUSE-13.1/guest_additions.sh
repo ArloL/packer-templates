@@ -1,6 +1,6 @@
 #!/bin/sh
-zypper remove virtualbox-guest-tools virtualbox-guest-kmp-default
-zypper install make gcc kernel-default-devel
+zypper --non-interactive remove virtualbox-guest-tools virtualbox-guest-kmp-default
+zypper --non-interactive install make gcc kernel-default-devel
 mkdir -p /mnt/vboxguestadditions
 mount -o loop VBoxGuestAdditions.iso /mnt/vboxguestadditions
 yes | sh /mnt/vboxguestadditions/VBoxLinuxAdditions.run
