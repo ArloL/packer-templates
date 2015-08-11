@@ -39,7 +39,6 @@
       "scripts": [
         "scripts/openSUSE-13.1/services.sh",
         "scripts/openSUSE-13.1/update.sh",
-        "scripts/openSUSE-13.1/reboot.sh",
         "scripts/openSUSE-13.1/guest_additions.sh",
         "scripts/common/motd.sh",
         "scripts/common/sshd.sh",
