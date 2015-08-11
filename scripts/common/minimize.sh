@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -e
 set -x
 
 dd if=/dev/zero of=/EMPTY bs=1M

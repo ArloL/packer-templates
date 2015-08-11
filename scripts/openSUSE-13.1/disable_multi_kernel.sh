@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -e
 set -x
 
 # Zypper usually updates the kernel. To complete a kernel update you
