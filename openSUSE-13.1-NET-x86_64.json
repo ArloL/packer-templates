@@ -38,6 +38,7 @@
       "type": "shell",
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} echo 'vagrant' | sudo -E -S {{ .Path }}",
       "scripts": [
+        "scripts/openSUSE-13.1/disable_multi_kernel.sh",
         "scripts/openSUSE-13.1/services.sh",
         "scripts/openSUSE-13.1/update.sh",
         "scripts/openSUSE-13.1/guest_additions.sh",
