@@ -15,6 +15,7 @@
         " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/openSUSE-13.1-autoyast.xml",
         " textmode=1<wait><enter><wait>"
       ],
+      "guest_additions_mode": "disable",
       "guest_os_type": "OpenSUSE_64",
       "hard_drive_interface": "sata",
       "headless": true,
@@ -38,10 +39,8 @@
       "type": "shell",
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} echo 'vagrant' | sudo -E -S {{ .Path }}",
       "scripts": [
-        "scripts/openSUSE-13.1/disable_multi_kernel.sh",
         "scripts/openSUSE-13.1/services.sh",
         "scripts/openSUSE-13.1/update.sh",
-        "scripts/openSUSE-13.1/guest_additions.sh",
         "scripts/common/motd.sh",
         "scripts/common/sshd.sh",
         "scripts/common/vagrant.sh",
