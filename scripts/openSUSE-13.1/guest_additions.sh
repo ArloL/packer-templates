@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -x
+
 uname -a
 rpm -qa kernel\*
 zypper --non-interactive remove virtualbox-guest-tools virtualbox-guest-kmp-default
