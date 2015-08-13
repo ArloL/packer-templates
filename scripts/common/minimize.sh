@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set -e
+# disabled since dd will fail once the device is full
+# set -e
 set -x
 
 dd if=/dev/zero of=/EMPTY bs=1M
