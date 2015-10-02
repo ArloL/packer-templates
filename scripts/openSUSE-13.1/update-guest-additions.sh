@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
 set -x
 
 zypper --non-interactive remove virtualbox-guest-kmp-default virtualbox-guest-tools
