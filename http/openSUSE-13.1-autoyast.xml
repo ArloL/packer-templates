@@ -178,6 +178,8 @@
       <package>wget</package>
       <package>curl</package>
       <package>iproute2</package>
+      <package>make</package>
+      <package>gcc</package>
       <package>kernel-default-devel</package>
     </packages>
     <do_online_update config:type="boolean">false</do_online_update>
