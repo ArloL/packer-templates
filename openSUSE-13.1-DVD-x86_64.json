@@ -14,7 +14,6 @@
         " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/openSUSE-13.1-autoyast.xml",
         " textmode=1<wait><enter><wait>"
       ],
-      "guest_additions_mode": "disable",
       "guest_os_type": "OpenSUSE_64",
       "hard_drive_interface": "sata",
       "headless": true,
