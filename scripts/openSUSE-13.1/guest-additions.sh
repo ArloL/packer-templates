@@ -4,7 +4,7 @@ set -e
 set -x
 
 zypper --non-interactive remove virtualbox-guest-kmp-default virtualbox-guest-tools virtualbox-guest-x11
-zypper --non-interactive install kernel-devel gcc make
+zypper --non-interactive install make gcc
 
 uname -a
 rpm -qa kernel\*
