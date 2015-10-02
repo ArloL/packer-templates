@@ -9,4 +9,5 @@ zypper --non-interactive addrepo --name "openSUSE-13.1 Non-OSS" http://linuxmirr
 zypper --non-interactive addrepo --refresh --name "openSUSE-13.1 Updates OSS" http://linuxmirror.rz.evosec.de/opensuse/update/13.1/ repo-13.1-update-oss
 zypper --non-interactive addrepo --refresh --name "openSUSE-13.1 Updates Non-OSS" http://linuxmirror.rz.evosec.de/opensuse/update/13.1-non-oss/ repo-13.1-update-non-oss
 zypper --non-interactive refresh
+zypper --non-interactive addlock 'kernel*'
 zypper --non-interactive update
