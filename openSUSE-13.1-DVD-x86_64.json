@@ -39,7 +39,7 @@
       "scripts": [
         "scripts/openSUSE-13.1/services.sh",
         "scripts/openSUSE-13.1/update.sh",
-        "scripts/openSUSE-13.1/guest-additions.sh",
+        "scripts/openSUSE-13.1/update-guest-additions.sh",
         "scripts/common/motd.sh",
         "scripts/common/sshd.sh",
         "scripts/common/vagrant.sh",
