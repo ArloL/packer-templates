@@ -6,6 +6,28 @@
       <confirm config:type="boolean">false</confirm>
     </mode>
   </general>
+  <report>
+    <errors>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">0</timeout>
+    </errors>
+    <messages>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">0</timeout>
+    </messages>
+    <warnings>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">0</timeout>
+    </warnings>
+    <yesno_messages>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">0</timeout>
+    </yesno_messages>
+  </report>
   <bootloader>
     <device_map config:type="list"/>
     <global>
@@ -93,6 +115,37 @@
     <hwclock>UTC</hwclock>
     <timezone>Etc/UTC</timezone>
   </timezone>
+  <software>
+    <image/>
+    <instsource/>
+    <packages config:type="list">
+      <package>grub2</package>
+      <package>glibc-locale</package>
+      <package>iputils</package>
+      <package>kernel-default</package>
+      <package>less</package>
+      <package>vim</package>
+      <package>sudo</package>
+      <package>screen</package>
+      <package>yast2</package>
+      <package>yast2-firstboot</package>
+      <package>zypper</package>
+      <package>open-vm-tools</package>
+      <package>yast2-trans-en_US</package>
+      <package>wget</package>
+      <package>curl</package>
+      <package>iproute2</package>
+      <package>make</package>
+      <package>gcc</package>
+      <package>kernel-default-devel</package>
+    </packages>
+    <do_online_update config:type="boolean">false</do_online_update>
+    <patterns config:type="list">
+      <pattern>base</pattern>
+      <pattern>sw_management</pattern>
+      <pattern>yast2_install_wf</pattern>
+    </patterns>
+  </software>
   <firewall>
     <enable_firewall config:type="boolean">false</enable_firewall>
     <start_firewall config:type="boolean">false</start_firewall>
@@ -129,59 +182,6 @@
   <keyboard>
     <keymap>english-us</keymap>
   </keyboard>
-  <report>
-    <errors>
-      <log config:type="boolean">true</log>
-      <show config:type="boolean">true</show>
-      <timeout config:type="integer">0</timeout>
-    </errors>
-    <messages>
-      <log config:type="boolean">true</log>
-      <show config:type="boolean">true</show>
-      <timeout config:type="integer">0</timeout>
-    </messages>
-    <warnings>
-      <log config:type="boolean">true</log>
-      <show config:type="boolean">true</show>
-      <timeout config:type="integer">0</timeout>
-    </warnings>
-    <yesno_messages>
-      <log config:type="boolean">true</log>
-      <show config:type="boolean">true</show>
-      <timeout config:type="integer">0</timeout>
-    </yesno_messages>
-  </report>
-  <software>
-    <image/>
-    <instsource/>
-    <packages config:type="list">
-      <package>grub2</package>
-      <package>glibc-locale</package>
-      <package>iputils</package>
-      <package>kernel-default</package>
-      <package>less</package>
-      <package>vim</package>
-      <package>sudo</package>
-      <package>screen</package>
-      <package>yast2</package>
-      <package>yast2-firstboot</package>
-      <package>zypper</package>
-      <package>open-vm-tools</package>
-      <package>yast2-trans-en_US</package>
-      <package>wget</package>
-      <package>curl</package>
-      <package>iproute2</package>
-      <package>make</package>
-      <package>gcc</package>
-      <package>kernel-default-devel</package>
-    </packages>
-    <do_online_update config:type="boolean">false</do_online_update>
-    <patterns config:type="list">
-      <pattern>base</pattern>
-      <pattern>sw_management</pattern>
-      <pattern>yast2_install_wf</pattern>
-    </patterns>
-  </software>
   <scripts>
     <chroot-scripts config:type="list">
       <script>
