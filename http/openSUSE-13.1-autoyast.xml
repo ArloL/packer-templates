@@ -132,7 +132,6 @@
     </patterns>
     <packages config:type="list">
       <package>kernel-default-devel</package>
-      <package>grub2</package>
       <package>glibc-locale</package>
       <package>iputils</package>
       <package>less</package>
