@@ -180,8 +180,8 @@
   <scripts>
     <chroot-scripts config:type="list">
       <script>
-      <chrooted config:type="boolean">true</chrooted>
-      <source><![CDATA[#!/bin/sh
+        <chrooted config:type="boolean">true</chrooted>
+        <source><![CDATA[#!/bin/sh
 rm -f /etc/udev/rules.d/70-persistent-net.rules
 ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules
 ]]></source>
