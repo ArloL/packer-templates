@@ -178,17 +178,6 @@
     </user>
   </users>
   <scripts>
-    <chroot-scripts config:type="list">
-      <script>
-        <chrooted config:type="boolean">true</chrooted>
-        <source><![CDATA[#!/bin/sh
-rm -f /etc/udev/rules.d/70-persistent-net.rules
-rm -f /etc/udev/rules.d/70-persistent-cd.rules
-ln -s /etc/udev/rules.d/80-net-name-slot.rules /etc/udev/rules.d/80-net-setup-link.rules
-ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules
-]]></source>
-      </script>
-    </chroot-scripts>
     <init-scripts config:type="list">
       <script>
         <source><![CDATA[#!/bin/sh
