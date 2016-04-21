@@ -24,11 +24,6 @@
       "ssh_timeout": "40m"
     }
   ],
-  "post-processors": [
-    {
-      "type": "vagrant"
-    }
-  ],
   "provisioners": [
     {
       "type": "file",
@@ -45,6 +40,11 @@
         "scripts/common/vagrant.sh",
         "scripts/common/minimize.sh"
       ]
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant"
     }
   ]
 }
