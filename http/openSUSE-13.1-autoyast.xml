@@ -150,9 +150,6 @@
     <enable_firewall config:type="boolean">false</enable_firewall>
     <start_firewall config:type="boolean">false</start_firewall>
   </firewall>
-  <deploy_image>
-    <image_installation config:type="boolean">false</image_installation>
-  </deploy_image>
   <networking>
     <keep_install_network config:type="boolean">true</keep_install_network>
     <dns>
