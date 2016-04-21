@@ -111,6 +111,9 @@
     <language>en_US</language>
     <languages>en_US</languages>
   </language>
+  <keyboard>
+    <keymap>english-us</keymap>
+  </keyboard>
   <timezone>
     <hwclock>UTC</hwclock>
     <timezone>Etc/UTC</timezone>
@@ -146,10 +149,6 @@
       <pattern>yast2_install_wf</pattern>
     </patterns>
   </software>
-  <firewall>
-    <enable_firewall config:type="boolean">false</enable_firewall>
-    <start_firewall config:type="boolean">false</start_firewall>
-  </firewall>
   <networking>
     <keep_install_network config:type="boolean">true</keep_install_network>
     <dns>
@@ -176,9 +175,6 @@
       <username>vagrant</username>
     </user>
   </users>
-  <keyboard>
-    <keymap>english-us</keymap>
-  </keyboard>
   <scripts>
     <chroot-scripts config:type="list">
       <script>
@@ -205,4 +201,8 @@ service sshd restart
       </script>
     </init-scripts>
   </scripts>
+  <firewall>
+    <enable_firewall config:type="boolean">false</enable_firewall>
+    <start_firewall config:type="boolean">false</start_firewall>
+  </firewall>
 </profile>
