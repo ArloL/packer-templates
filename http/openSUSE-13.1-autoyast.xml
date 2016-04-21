@@ -118,6 +118,9 @@
     <hwclock>UTC</hwclock>
     <timezone>Etc/UTC</timezone>
   </timezone>
+  <deploy_image>
+    <image_installation config:type="boolean">false</image_installation>
+  </deploy_image>
   <software>
     <image/>
     <instsource/>
