@@ -6,7 +6,7 @@
     <device_map config:type="list"/>
     <global>
       <activate>true</activate>
-      <append>/vmlinuz root=/dev/sda2 splash=silent quiet showopts</append>
+      <append>/vmlinuz root=/dev/sda2 splash=silent quiet showopts net.ifnames=0</append>
       <append_failsafe/>
       <boot_boot>true</boot_boot>
       <boot_custom/>
