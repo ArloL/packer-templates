@@ -2,6 +2,17 @@
 <!DOCTYPE profile>
 <!-- based on https://github.com/crowbar/crowbar/blob/master/opensuse-13.1-extra/autoinst.xml -->
 <profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <general>
+    <ask-list config:type="list"/>
+    <proposals config:type="list"/>
+    <mode>
+      <confirm config:type="boolean">false</confirm>
+      <final_halt config:type="boolean">false</final_halt>
+      <final_reboot config:type="boolean">false</final_reboot>
+      <halt config:type="boolean">false</halt>
+      <second_stage config:type="boolean">true</second_stage>
+    </mode>
+  </general>
   <bootloader>
     <device_map config:type="list"/>
     <global>
@@ -102,17 +113,6 @@
       </interface>
     </interfaces>
   </networking>
-  <general>
-    <ask-list config:type="list"/>
-    <proposals config:type="list"/>
-    <mode>
-      <confirm config:type="boolean">false</confirm>
-      <final_halt config:type="boolean">false</final_halt>
-      <final_reboot config:type="boolean">false</final_reboot>
-      <halt config:type="boolean">false</halt>
-      <second_stage config:type="boolean">true</second_stage>
-    </mode>
-  </general>
   <users config:type="list">
     <user>
       <encrypted config:type="boolean">false</encrypted>
