@@ -122,13 +122,18 @@
     <image_installation config:type="boolean">false</image_installation>
   </deploy_image>
   <software>
-    <image/>
-    <instsource/>
+    <do_online_update config:type="boolean">false</do_online_update>
+    <kernel>kernel-default</kernel>
+    <patterns config:type="list">
+      <pattern>base</pattern>
+      <pattern>sw_management</pattern>
+      <pattern>yast2_install_wf</pattern>
+    </patterns>
     <packages config:type="list">
+      <package>kernel-default-devel</package>
       <package>grub2</package>
       <package>glibc-locale</package>
       <package>iputils</package>
-      <package>kernel-default</package>
       <package>less</package>
       <package>vim</package>
       <package>sudo</package>
@@ -143,14 +148,7 @@
       <package>iproute2</package>
       <package>make</package>
       <package>gcc</package>
-      <package>kernel-default-devel</package>
     </packages>
-    <do_online_update config:type="boolean">false</do_online_update>
-    <patterns config:type="list">
-      <pattern>base</pattern>
-      <pattern>sw_management</pattern>
-      <pattern>yast2_install_wf</pattern>
-    </patterns>
   </software>
   <networking>
     <keep_install_network config:type="boolean">true</keep_install_network>
