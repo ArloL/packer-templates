@@ -138,7 +138,6 @@
       <package>vim</package>
       <package>sudo</package>
       <package>screen</package>
-      <package>open-vm-tools</package>
       <package>wget</package>
       <package>curl</package>
       <package>iproute2</package>
