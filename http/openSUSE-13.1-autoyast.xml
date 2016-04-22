@@ -138,10 +138,7 @@
       <package>vim</package>
       <package>sudo</package>
       <package>screen</package>
-      <package>yast2</package>
-      <package>yast2-firstboot</package>
       <package>open-vm-tools</package>
-      <package>yast2-trans-en_US</package>
       <package>wget</package>
       <package>curl</package>
       <package>iproute2</package>
