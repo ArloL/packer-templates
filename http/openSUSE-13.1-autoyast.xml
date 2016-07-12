@@ -174,6 +174,7 @@
   <scripts>
     <init-scripts config:type="list">
       <script>
+        <filename>zypper_update.sh</filename>
         <source><![CDATA[#!/bin/sh
 systemctl enable sshd
 zypper --non-interactive removerepo 1
