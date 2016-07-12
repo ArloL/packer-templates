@@ -19,7 +19,7 @@
       "headless": true,
       "http_directory": "http",
       "shutdown_command": "echo 'vagrant' | sudo -S /sbin/shutdown -P now",
-      "ssh_timeout": "40m"
+      "ssh_timeout": "60m"
     }
   ],
   "provisioners": [
