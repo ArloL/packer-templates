@@ -177,8 +177,6 @@
         <filename>zypper_update.sh</filename>
         <source><![CDATA[#!/bin/sh
 systemctl enable sshd
-# https://bugzilla.novell.com/show_bug.cgi?id=828764
-zypper --non-interactive install http://linuxmirror.rz.evosec.de/opensuse/update/13.1/x86_64/libzypp-13.10.4-23.1.x86_64.rpm http://linuxmirror.rz.evosec.de/opensuse/update/13.1/x86_64/libsolv-tools-0.4.2-11.1.x86_64.rpm
 zypper --non-interactive removerepo 1
 zypper --non-interactive addrepo --name "openSUSE-13.1 OSS" http://linuxmirror.rz.evosec.de/opensuse/distribution/13.1/repo/oss/ repo-13.1-oss
 zypper --non-interactive addrepo --name "openSUSE-13.1 Non-OSS" http://linuxmirror.rz.evosec.de/opensuse/distribution/13.1/repo/non-oss/ repo-13.1-non-oss
