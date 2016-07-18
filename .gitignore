@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io
+# Created by https://www.gitignore.io/api/packer
 
 ### Packer ###
 # Cache objects
@@ -7,22 +7,7 @@ packer_cache/
 # For built boxes
 *.box
 
-# Output directories
-output-openSUSE-13.1-DVD-x86_64/
 
-
-### SublimeText ###
-# cache files for sublime text
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-
-# workspace files are user-specific
-*.sublime-workspace
-
-# project files should be checked into the repository, unless a significant
-# proportion of contributors will probably not be using SublimeText
-# *.sublime-project
-
-# sftp configuration file
-sftp-config.json
+### Custom ###
+# For output files
+*.vdi
