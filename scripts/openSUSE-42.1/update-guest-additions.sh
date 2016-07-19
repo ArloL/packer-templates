@@ -2,8 +2,6 @@
 
 set -x
 
-zypper --non-interactive remove virtualbox-guest-kmp-default virtualbox-guest-tools
-
 uname -a
 rpm -qa kernel\*
 mkdir -p /mnt/vboxguestadditions

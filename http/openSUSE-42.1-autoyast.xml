@@ -144,6 +144,10 @@
       <package>make</package>
       <package>gcc</package>
     </packages>
+    <remove-packages config:type="list">
+      <package>virtualbox-guest-kmp-default</package>
+      <package>virtualbox-guest-tools</package>
+    </remove-packages>
   </software>
   <networking>
     <keep_install_network config:type="boolean">true</keep_install_network>
