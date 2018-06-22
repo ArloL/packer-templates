@@ -3,7 +3,7 @@
     {
       "type": "virtualbox-iso",
       "name": "openSUSE-Leap-15.0-DVD-x86_64",
-      "iso_checksum": "195baca6c5f3b7f3ad4d7984a7f7bd5c4a37be2eb67e58b65d07ac3a2b599e83",
+      "iso_checksum": "c477428c7830ca76762d2f78603e13067c33952b936ff100189523e1fabe5a77",
       "iso_checksum_type": "sha256",
       "iso_url": "http://download.opensuse.org/distribution/leap/15.0/iso/openSUSE-Leap-15.0-DVD-x86_64.iso",
       "ssh_username": "vagrant",
