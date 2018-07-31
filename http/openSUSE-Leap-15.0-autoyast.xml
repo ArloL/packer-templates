@@ -163,14 +163,6 @@ zypper --non-interactive refresh
 zypper --non-interactive update
 ]]></source>
       </script>
-      <script>
-        <filename>prepare_for_vagrant.sh</filename>
-        <source><![CDATA[#!/bin/bash
-sed -i -e '/Defaults\s\+env_reset/a Defaults\texempt_group=wheel' /etc/sudoers
-echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-usermod -G wheel -a vagrant
-]]></source>
-      </script>
     </init-scripts>
     <chroot-scripts config:type="list">
       <script>
