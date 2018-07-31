@@ -10,16 +10,23 @@
       "ssh_password": "vagrant",
       "boot_command": [
         "<esc><enter><wait>",
-        "linux netsetup=dhcp net.ifnames=0 lang=en_US hostname=vagrant",
-        " autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/openSUSE-Leap-15.0-autoyast.xml",
-        " textmode=1<wait><enter><wait>"
+        "linux ",
+        "biosdevname=0 ",
+        "net.ifnames=0 ",
+        "netdevice=eth0 ",
+        "netsetup=dhcp ",
+        "lang=en_US ",
+        "textmode=1 ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/openSUSE-Leap-15.0-autoyast.xml ",
+        "<enter><wait>"
       ],
       "guest_os_type": "OpenSUSE_64",
       "hard_drive_interface": "sata",
       "headless": true,
       "http_directory": "http",
-      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/shutdown -P now",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -p",
       "ssh_timeout": "60m",
+      "ssh_handshake_attempts": "120",
       "vboxmanage": [
         [
           "modifyvm",
@@ -38,14 +45,16 @@
     },
     {
       "type": "shell",
-      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} echo 'vagrant' | sudo -E -S {{ .Path }}",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "scripts": [
+        "scripts/common/wait.sh",
         "scripts/openSUSE-Leap-15.0/update.sh",
         "scripts/openSUSE-Leap-15.0/update-guest-additions.sh",
         "scripts/common/motd.sh",
         "scripts/common/sshd.sh",
+        "scripts/common/bindfs.sh",
         "scripts/common/vagrant.sh",
-        "scripts/common/i2c_piix4.sh",
+        "scripts/common/cleanup.sh",
         "scripts/common/minimize.sh"
       ]
     }
