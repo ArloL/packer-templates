@@ -2,11 +2,10 @@
 
 set -x
 
-uname -a
-rpm -qa kernel\*
-mkdir -p /mnt/vboxguestadditions
-mount -o loop /home/vagrant/VBoxGuestAdditions.iso /mnt/vboxguestadditions
-yes | sh /mnt/vboxguestadditions/VBoxLinuxAdditions.run --nox11
-umount /mnt/vboxguestadditions
-rm -rf /mnt/vboxguestadditions
-rm /home/vagrant/VBoxGuestAdditions.iso
+zypper --non-interactive --gpg-auto-import-keys install \
+    --auto-agree-with-licenses \
+    virtualbox-guest-tools \
+    virtualbox-guest-x11 \
+    virtualbox-guest-kmp-default
+
+echo vboxsf >/etc/modules-load.d/vboxsf.conf
