@@ -146,24 +146,6 @@
     </user>
   </users>
   <scripts>
-    <init-scripts config:type="list">
-      <script>
-        <filename>zypper_update.sh</filename>
-        <source><![CDATA[#!/bin/sh
-systemctl enable sshd
-sed -i -e 's/^multiversion/# multiversion/' \
-  -e s'/#\?[[:space:]]*solver.onlyRequires.*/solver.onlyRequires = true/' \
-  /etc/zypp/zypp.conf
-zypper --non-interactive removerepo 1
-zypper --non-interactive addrepo --name "openSUSE-Leap-15.0 OSS" http://linuxmirror.rz.evosec.de/opensuse/distribution/leap/15.0/repo/oss/ repo-15.0-oss
-zypper --non-interactive addrepo --name "openSUSE-Leap-15.0 Non-OSS" http://linuxmirror.rz.evosec.de/opensuse/distribution/leap/15.0/repo/non-oss/ repo-15.0-non-oss
-zypper --non-interactive addrepo --refresh --name "openSUSE-Leap-15.0 Updates OSS" http://linuxmirror.rz.evosec.de/opensuse/update/leap/15.0/oss/ repo-15.0-update-oss
-zypper --non-interactive addrepo --refresh --name "openSUSE-Leap-15.0 Updates Non-OSS" http://linuxmirror.rz.evosec.de/opensuse/update/leap/15.0/non-oss/ repo-15.0-update-non-oss
-zypper --non-interactive refresh
-zypper --non-interactive update
-]]></source>
-      </script>
-    </init-scripts>
     <chroot-scripts config:type="list">
       <script>
         <filename>newrename.sh</filename>
@@ -182,6 +164,24 @@ zypper --non-interactive update
         <chrooted config:type="boolean">true</chrooted>
       </script>
     </chroot-scripts>
+    <init-scripts config:type="list">
+      <script>
+        <filename>zypper_update.sh</filename>
+        <source><![CDATA[#!/bin/sh
+systemctl enable sshd
+sed -i -e 's/^multiversion/# multiversion/' \
+  -e s'/#\?[[:space:]]*solver.onlyRequires.*/solver.onlyRequires = true/' \
+  /etc/zypp/zypp.conf
+zypper --non-interactive removerepo 1
+zypper --non-interactive addrepo --name "openSUSE-Leap-15.0 OSS" http://linuxmirror.rz.evosec.de/opensuse/distribution/leap/15.0/repo/oss/ repo-15.0-oss
+zypper --non-interactive addrepo --name "openSUSE-Leap-15.0 Non-OSS" http://linuxmirror.rz.evosec.de/opensuse/distribution/leap/15.0/repo/non-oss/ repo-15.0-non-oss
+zypper --non-interactive addrepo --refresh --name "openSUSE-Leap-15.0 Updates OSS" http://linuxmirror.rz.evosec.de/opensuse/update/leap/15.0/oss/ repo-15.0-update-oss
+zypper --non-interactive addrepo --refresh --name "openSUSE-Leap-15.0 Updates Non-OSS" http://linuxmirror.rz.evosec.de/opensuse/update/leap/15.0/non-oss/ repo-15.0-update-non-oss
+zypper --non-interactive refresh
+zypper --non-interactive update
+]]></source>
+      </script>
+    </init-scripts>
   </scripts>
   <firewall>
     <enable_firewall config:type="boolean">false</enable_firewall>
